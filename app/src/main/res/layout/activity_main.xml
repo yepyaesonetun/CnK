@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.prime.cnk.activities.MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_product_category_name"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textColor="@color/colorTextPrimary"
+        android:textStyle="bold"
+        android:text="Charles and Keith"
+        android:textAllCaps="true" />
+
+    <TextView
+        style="@style/CnKTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="@dimen/padding_large"
+        android:layout_below="@+id/tv_product_category_name"
+        android:text="sort by" />
+
+    <ImageView
+        android:id="@+id/iv_nav_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/iv_list"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="19dp"
+        android:src="@drawable/ic_drag_handle_black_24dp"
+        android:tint="@color/colorTintGrey" />
+
+
+    <ImageView
+        android:id="@+id/iv_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/iv_nav_icon"
+        android:layout_below="@+id/tv_product_category_name"
+        android:src="@mipmap/list"
+        android:tint="@color/colorTintGrey" />
+
+
+    <ImageView
+        android:id="@+id/iv_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_product_category_name"
+        android:layout_marginStart="@dimen/padding_large"
+        android:layout_toEndOf="@+id/iv_list"
+        android:src="@mipmap/grid"
+        android:tint="@color/colorTintGrey" />
+
+    <View
+        android:id="@+id/view_list_separator"
+        android:layout_width="20dp"
+        android:layout_height="2dp"
+        android:visibility="gone"
+        android:layout_below="@id/iv_list"
+        android:layout_marginTop="@dimen/padding_small"
+        android:layout_toStartOf="@+id/iv_grid"
+        android:background="@color/colorTintGrey" />
+
+    <View
+        android:id="@+id/view_grid_separator"
+        android:layout_width="40dp"
+        android:layout_height="2dp"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/padding_small"
+        android:layout_alignEnd="@+id/iv_grid"
+        android:layout_below="@+id/iv_grid"
+        android:background="@color/colorTintGrey" />
+
+    <TextView
+        android:id="@+id/tv_item_count"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/iv_grid"
+        android:text="@string/txt_tv_item_count"
+        style="@style/CnKTextViewStyle"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_news_in"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_below="@id/tv_item_count"
+        tools:itemCount="10"
+        tools:layoutManager="android.support.v7.widget.GridLayoutManager"
+        tools:listitem="@layout/item_view_product"
+        tools:orientation="vertical"
+        tools:scrollbars="vertical"
+        tools:spanCount="2" />
+
+
+</RelativeLayout>

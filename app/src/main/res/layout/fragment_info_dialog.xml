@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_product_category_name"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:letterSpacing="0.06"
+        android:paddingTop="@dimen/padding_small"
+        android:text="News In"
+        android:textAllCaps="true"
+        android:textColor="@color/colorTintGrey"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/iv_nav_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_product_category_name"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="19dp"
+        android:paddingTop="@dimen/padding_medium"
+        android:src="@mipmap/left_arrow"
+        android:tint="@color/colorTintGrey" />
+
+    <TextView
+        android:id="@+id/tv_product_code"
+        style="@style/CnKTextViewStyle"
+        android:layout_below="@id/iv_nav_icon"
+        android:text="ck1-7038670_white" />
+
+    <TextView
+        android:id="@+id/tv_product_description_title"
+        style="@style/CnKTextViewStyle.Title"
+        android:letterSpacing="0.2"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_product_code"
+        android:gravity="center"
+        android:textStyle="normal"
+        android:text="description" />
+
+    <TextView
+        android:id="@+id/tv_product_description"
+        style="@style/CnKTextViewStyle"
+        android:layout_below="@id/tv_product_description_title"
+        android:paddingBottom="@dimen/padding_medium"
+        android:paddingEnd="@dimen/padding_large"
+        android:paddingStart="@dimen/padding_large"
+        android:paddingTop="@dimen/padding_medium"
+        android:text="CHAELAES AND KEITH - Shoes black flat mules featuring a pointed toe and see though design."
+        android:textAllCaps="false"
+        android:textStyle="normal" />
+
+    <LinearLayout
+        android:id="@+id/ll_material"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_product_description"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_material_description_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="@dimen/padding_medium"
+            android:text="Material Description"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tv_material_description_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/padding_medium"
+            android:text="TPU" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_depth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_material"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_material_depth_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="@dimen/padding_medium"
+            android:text="Depth(mm)"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tv_depth_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/padding_medium"
+            android:text="N/A" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_heel_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_depth"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_heel_height_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="@dimen/padding_medium"
+            android:text="Heel Height"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tv_heel_height_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/padding_medium"
+            android:text="Low 0.5"
+            android:textAllCaps="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_heel_height"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_height_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="@dimen/padding_medium"
+            android:text="Height(mm)"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tv_height_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/padding_medium"
+            android:text="N/A"
+            android:textAllCaps="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_height"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/tv_width_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="@dimen/padding_medium"
+            android:text="Width(mm)"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tv_width_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/padding_medium"
+            android:text="N/A"
+            android:textAllCaps="true" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_wish_list"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorBlack"
+        android:gravity="center"
+        android:letterSpacing="0.8"
+        android:paddingBottom="@dimen/padding_large"
+        android:paddingEnd="@dimen/padding_large"
+        android:paddingStart="@dimen/padding_large"
+        android:paddingTop="@dimen/padding_large"
+        android:text="share"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        android:id="@+id/tv_wish_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="22dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:paddingTop="@dimen/padding_large"
+        android:paddingBottom="@dimen/padding_medium"
+        android:text="add to wish list"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBlack" />
+
+    <View
+        android:layout_width="140dp"
+        android:layout_height="2dp"
+        android:layout_alignBottom="@+id/tv_wish_list"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorBlack" />
+
+
+
+</RelativeLayout>

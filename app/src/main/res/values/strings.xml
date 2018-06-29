@@ -1,0 +1,4 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">CnK</string>
+    <string name="txt_tv_item_count"><xliff:g name="item_count">%1$d</xliff:g> items</string>
+</resources>
