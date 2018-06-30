@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.prime.cnk.R;
 import com.prime.cnk.adapters.ItemListRVAdapter;
+import com.prime.cnk.components.EmptyViewPod;
+import com.prime.cnk.components.SmartRecyclerView;
+import com.prime.cnk.components.SmartScrollListener;
 import com.prime.cnk.data.vo.NewProductVO;
 import com.prime.cnk.mvp.presenters.NewProductListPresenter;
 import com.prime.cnk.mvp.views.NewProductListView;
@@ -23,6 +26,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActiviy implements NewProductListView {
+
+    public static int INITIAL_PAGE_NUMBER = 1;
 
     @BindView(R.id.iv_list)
     ImageView ivList;
@@ -39,12 +44,16 @@ public class MainActivity extends BaseActiviy implements NewProductListView {
     @BindView(R.id.tv_item_count)
     TextView tvItemCount;
 
+    @BindView(R.id.vp_empty)
+    EmptyViewPod emptyViewPod;
+
     @BindView(R.id.rv_news_in)
-    RecyclerView rvNewsIn;
+    SmartRecyclerView rvNewsIn;
 
     private boolean isViewWithList = true;
     RecyclerView.LayoutManager lmVertical;
     RecyclerView.LayoutManager lmGrid;
+    private SmartScrollListener mSmartScrollListener;
 
     private ItemListRVAdapter adapter;
 
@@ -60,10 +69,21 @@ public class MainActivity extends BaseActiviy implements NewProductListView {
         NewProductListPresenter mPresenter = ViewModelProviders.of(this).get(NewProductListPresenter.class);
         mPresenter.initPresenter(this);
 
+
         adapter = new ItemListRVAdapter(this, mPresenter); // parse presenter
+        rvNewsIn.setEmptyView(emptyViewPod);
         rvNewsIn.setLayoutManager(lmVertical);
         rvNewsIn.setAdapter(adapter);
         refreshRecycler(isViewWithList);
+
+        mSmartScrollListener = new SmartScrollListener(new SmartScrollListener.OnSmartScrollListener() {
+            @Override
+            public void onListEndReach() {
+                mPresenter.loadData(++INITIAL_PAGE_NUMBER);
+            }
+        });
+        rvNewsIn.addOnScrollListener(mSmartScrollListener);
+
 
         mPresenter.getNewProductsLD().observe(this, newProductVOList -> {
             displayNewProductList(newProductVOList);
@@ -82,6 +102,7 @@ public class MainActivity extends BaseActiviy implements NewProductListView {
             isViewWithList = false;
             refreshRecycler(false);
         });
+
 
     }
 

@@ -39,10 +39,10 @@ public class NewProductModel extends BaseModel {
         return mSObjInstance;
     }
 
-    public void startLoadingNewProducts(MutableLiveData<List<NewProductVO>> newProductListLD,
+    public void startLoadingNewProducts(int pageNumber, MutableLiveData<List<NewProductVO>> newProductListLD,
                                         MutableLiveData<String> errorLD) {
 
-        theAPI.loadNewProduct(mmNewProductPageIndex, AppConstants.ACCESS_TOKEN)
+        theAPI.loadNewProduct(pageNumber, AppConstants.ACCESS_TOKEN)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<GetNewProductResponse>() {
