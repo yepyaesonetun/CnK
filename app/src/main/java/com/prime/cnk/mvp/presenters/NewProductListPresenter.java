@@ -22,7 +22,6 @@ public class NewProductListPresenter extends BasePresenter<NewProductListView> i
     public void initPresenter(NewProductListView mView) {
         super.initPresenter(mView);
         mNewProductListLD = new MutableLiveData<>();
-//        NewProductModel.getInstance().startLoadingNewProducts(mNewProductListLD, mErrorLD);
         loadData(1);
     }
 
